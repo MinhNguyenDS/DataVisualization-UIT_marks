@@ -2,6 +2,8 @@ import pylab
 import numpy as np
 import matplotlib.pyplot as plt
 
+plt.style.use('seaborn')
+
 title_text = 'ĐIỂM THI THPT QUỐC GIA KHỐI A QUA CÁC NĂM Ở UIT'
 footer_text = 'made by Hoang Minh'
 fig_background_color = 'lightcyan'
@@ -119,14 +121,14 @@ plt.suptitle(title_text)
 plt.figtext(0.95, 0.95, footer_text, horizontalalignment='right', size=8, weight='light')
 # Without plt.draw() here, the title will center on the axes and not the figure.
 plt.draw()
-# Create image. plt.savefig ignores figure edge and face colors, so map them.
-    #fig = plt.gcf()
-    #plt.savefig('pyplot-table-demo.png',
-            #bbox='tight',
-            #edgecolor=fig.get_edgecolor(),
-            #facecolor=fig.get_facecolor(),
-            #dpi=155
-            #)
+#Create image. plt.savefig ignores figure edge and face colors, so map them.
+fig = plt.gcf()
+plt.savefig('UIT_Marks.png',
+        bbox='tight',
+        edgecolor=fig.get_edgecolor(),
+        facecolor=fig.get_facecolor(),
+        dpi=155
+        )
 # Go to x,y on windows
 thismanager = plt.get_current_fig_manager()
 thismanager.window.wm_geometry("+1000+0")
